@@ -1,3 +1,5 @@
+package methods;
+
 public class TeenNumberChecker {
     public static void main(String[] args) {
         System.out.println(hasTeen(9, 99, 19));

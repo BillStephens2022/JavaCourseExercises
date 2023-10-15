@@ -1,3 +1,5 @@
+package methods;
+
 public class SecondsAndMinutes {
     public static void main(String[] args) {
         // test cases with valid inputs

@@ -1,3 +1,5 @@
+package methods;
+
 public class BarkingDog {
     public static void main(String[] args) {
         System.out.println(shouldWakeUp (true, 1));

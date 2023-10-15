@@ -1,3 +1,5 @@
+package methods;
+
 public class FirstMethodChallenge {
     public static void main(String[] args) {
         String name = "Bill";

@@ -1,3 +1,5 @@
+package methods;
+
 public class PositiveNegativeZero {
     public static void main(String[] args) {
       checkNumber(5);
