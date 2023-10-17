@@ -1,4 +1,4 @@
-package methods;
+package for_loops;
 
 public class SumThreeAndFive {
     public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class SumThreeAndFive {
                 countOfMatches ++;
                 System.out.println("Found a match = " + i);
             }
-            if (countOfMatches >= 5) {
+            if (countOfMatches == 5) {
                 break;
             }
         }
