@@ -45,6 +45,21 @@ public class Main {
         calculator.setSecondNumber(0);
         System.out.println("multiply= " + calculator.getMultiplicationResult());
         System.out.println("divide= " + calculator.getDivisionResult());
+
+        Customer customer = new Customer("Tim", 1000, "tim@gmail.com");
+        System.out.println(customer.getName());
+        System.out.println(customer.getCreditLimit());
+        System.out.println(customer.getEmailAddress());
+
+        Customer customer2 = new Customer();
+        System.out.println(customer2.getName());
+        System.out.println(customer2.getCreditLimit());
+        System.out.println(customer2.getEmailAddress());
+
+        Customer customer3 = new Customer("Joe", "Joe@email.com");
+        System.out.println(customer3.getName());
+        System.out.println(customer3.getCreditLimit());
+        System.out.println(customer3.getEmailAddress());
     }
 
 
