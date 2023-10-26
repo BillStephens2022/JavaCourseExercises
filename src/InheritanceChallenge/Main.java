@@ -10,8 +10,8 @@ public class Main {
       Employee joe = new Employee("Joe", "11/11/1990", "03/03/2020");
       System.out.println(joe);
 
-      SalariedEmployee bill = new SalariedEmployee("Bill", "04/17/1972", "05/14/2015",
-              170000);
+      SalariedEmployee bill = new SalariedEmployee("Bill", "11/29/1962", "05/14/2008",
+              700000);
       System.out.println(bill);
       System.out.println("Bill's Paycheck = $" + bill.collectPay());
       bill.retire();
