@@ -1,7 +1,8 @@
 package Inheritance;
 
 public class Animal {
-    private String type;
+    // Note: protected allows subclasses to reference the property
+    protected String type;
     private String size;
     private double weight;
 
