@@ -22,7 +22,10 @@ public class Main {
         // gettingElements(placesToVisit);
         // printItinerary(placesToVisit);
         // printItinerary2(placesToVisit);
-        printItinerary3(placesToVisit);
+        // printItinerary3(placesToVisit);
+
+        // testIterator(placesToVisit);
+        testIterator2(placesToVisit);
     }
 
     private static void addMoreElements(LinkedList<String> list) {
@@ -117,7 +120,7 @@ public class Main {
         System.out.println("Trip ends at: " + list.getLast());
     }
 
-    // // same as printItinerary, but using a list iterator
+    // same as printItinerary, but using a list iterator
     public static void printItinerary3(LinkedList<String> list) {
         System.out.println("Trip starts at: " + list.getFirst());
 
@@ -135,5 +138,41 @@ public class Main {
         System.out.println("Trip ends at: " + list.getLast());
     }
 
+    // iterate through list.  Note: iterators are forward only
+    private static void testIterator(LinkedList<String> list) {
+        var iterator = list.iterator();
+        while (iterator.hasNext()) {
+            // System.out.println(iterator.next());
+            if (iterator.next().equals("Brisbane")) {
+                iterator.remove(); // removes the item
+            }
+        }
+        System.out.println(list);
+    }
+    // using a 'listIterator'.  note that listIterators can move backwards also,
+    // so you can use other methods that you can't with a regular 'iterator' object
+    private static void testIterator2(LinkedList<String> list) {
+        var listIterator = list.listIterator();
+        while (listIterator.hasNext()) {
+            // System.out.println(iterator.next());
+            if (listIterator.next().equals("Brisbane")) {
+                listIterator.add("Lake Wivenhoe"); // adds item after item it found
+            }
+        }
+        // note that after while loop above runs, the iterator is already at end of list,
+        // so now we use hasPrevious() to traverse backward through the list
+        while (listIterator.hasPrevious()) {
+            System.out.println(listIterator.previous());
+        }
+        System.out.println(list);
+
+        // this positions the list iterator at a specific index
+        // note that the iterator (or "cursor") is positioned between the actual elements,
+        // so an iterator at position 3 is positioned between element at index 2 & element
+        // at index 3
+        var iterator2 = list.listIterator(3);
+        // we then print out the next item (index 3)
+        System.out.println(iterator2.next());
+    }
 
 }
