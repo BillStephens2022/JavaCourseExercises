@@ -1,5 +1,8 @@
 package Autoboxing;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Integer boxedInt = Integer.valueOf(15); // preferred but unnecessary
@@ -21,6 +24,17 @@ public class Main {
         // assigning it to the primitive "double" type
         // uses "Auto-unboxing"
         double resultUnboxed = getDoubleObject();
+
+        Integer[] wrapperArray = new Integer[5];
+        wrapperArray[0] = 50;
+        System.out.println(Arrays.toString(wrapperArray));
+        System.out.println((wrapperArray[0].getClass().getName())); // java.lang.Integer
+
+        Character[] characterArray = {'a', 'b', 'c', 'd'};
+        System.out.println(Arrays.toString(characterArray));
+
+        var ourList = getList(1, 2, 3, 4, 5);
+        System.out.println(ourList);
     }
     private static Double getDoubleObject() {
         return Double.valueOf(100.00);
@@ -28,6 +42,26 @@ public class Main {
 
     private static double getLiteralDoublePrimitive() {
         return 100.0;
+    }
+
+    // unboxes an Integer to primitive type integer
+    private static int returnAnInt(Integer i) {
+        return i;
+    }
+
+    // boxes an integer primitive type to an object of the wrapper Integer class
+    private static Integer returnAnInteger(int i) {
+        return i;
+    }
+
+    // note that we could also use varargs as an "Integer" type as well instead of "int"
+    // that would work as well.
+    private static ArrayList<Integer> getList(int... varargs) {
+        ArrayList<Integer> aList = new ArrayList<>();
+        for (int i : varargs) {
+            aList.add(i);
+        }
+        return aList;
     }
 
 }
