@@ -2,7 +2,6 @@ package GenericsExtra;
 
 import GenericsExtra.model.LPAStudent;
 import GenericsExtra.model.Student;
-import GenericsExtra.util.QueryItem;
 import GenericsExtra.util.QueryList;
 
 import java.util.ArrayList;
