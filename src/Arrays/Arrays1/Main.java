@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.Arrays1;
 
 import java.util.Arrays;
 public class Main {

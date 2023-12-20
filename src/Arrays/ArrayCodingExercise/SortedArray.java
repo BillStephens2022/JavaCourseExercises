@@ -1,4 +1,4 @@
-package ArrayCodingExercise;
+package Arrays.ArrayCodingExercise;
 
 import java.util.Arrays;
 import java.util.Scanner;
