@@ -1,4 +1,4 @@
-package CollectionsMethods;
+package Collections.CollectionsMethods;
 
 import java.util.*;
 
