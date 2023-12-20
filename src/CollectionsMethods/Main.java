@@ -1,14 +1,9 @@
 package CollectionsMethods;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<Card> deck = Card.getStandardDeck();
-        Card.printDeck(deck);
 
         Card[] cardArray = new Card[13];
         Card aceOfHearts = Card.getFaceCard(Card.Suit.HEART, 'A');
@@ -42,5 +37,47 @@ public class Main {
 
         cards = List.copyOf(kingsOfClubs);
         Card.printDeck(cards, "List Copy of Kings", 1);
+
+        List<Card> deck = Card.getStandardDeck();
+        Card.printDeck(deck);
+
+        Collections.shuffle(deck);
+        Card.printDeck(deck, "Shuffled Deck", 4);
+
+        Collections.reverse(deck);
+        Card.printDeck(deck, "Reversed previously shuffled Deck of Cards", 4);
+
+        var sortingAlgorithm = Comparator.comparing(Card::rank)
+                .thenComparing(Card::suit);
+        Collections.sort(deck, sortingAlgorithm);
+        Card.printDeck(deck, "Standard Deck sorted by rank, suit", 13);
+
+        Collections.reverse(deck);
+        Card.printDeck(deck, "sorted by rank, suit reversed:", 13);
+
+        // note that after deck is reverse sorted above, the kings start at index 4 - 7.  The subList method is called
+        // from index 4 - 8 which gets all the kings. When using subList, the ending index is not inclusive, so
+        // we're really pulling 4 - 7).
+        List<Card> kings = new ArrayList<>(deck.subList(4, 8));
+        Card.printDeck(kings, "Kings in deck", 1);
+
+        // same as above only pulling tens
+        List<Card> tens = new ArrayList<>(deck.subList(16, 20));
+        Card.printDeck(tens, "Tens in deck", 1);
+
+        // if you want to search for the starting index of tens in the deck
+        int subListIndex = Collections.indexOfSubList(deck, tens);
+        System.out.println("sublist index for tens = " + subListIndex);
+        // checks if list contains tens, result = true
+        System.out.println("Contains = " + deck.containsAll(tens));
+
+        // checks if deck has elements in common with tens
+        // returns false if it does have elements in common, false if it doesn't.  The below returns false since
+        // deck and tens have elements in common.
+        boolean disjoint = Collections.disjoint(deck, tens);
+        System.out.println("disjoint = " + disjoint);
+        // the below returns true since tens and kings don't share elements in common.
+        boolean disjoint2 = Collections.disjoint(tens, kings);
+        System.out.println("disjoint2 = " + disjoint2);
     }
 }
