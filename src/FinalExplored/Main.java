@@ -28,6 +28,12 @@ public class Main {
         doXYZ(xArgument, 16, zArgument);
         System.out.println("After Method, xArgument: " + xArgument);
         System.out.println("After Method, zArgument: " + zArgument);
+
+        StringBuilder tracker = new StringBuilder("Step 1 is abc");
+        Logger.logToConsole(tracker.toString());
+        tracker.append(", Step 2 is xyz.");
+        Logger.logToConsole(tracker.toString());
+        System.out.println("After logging, tracker = " + tracker);
     }
 
     private static void doXYZ(String x, int y, final StringBuilder z) {
