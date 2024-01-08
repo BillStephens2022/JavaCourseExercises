@@ -78,7 +78,7 @@ public class Student {
 
     public int getMonthsSinceActive(String courseCode) {
         CourseEngagement info = engagementMap.get(courseCode);
-        return info == null ? 0 : getMonthsSinceActive();
+        return info == null ? 0 : info.getMonthsSinceActive();
     }
 
     public int getMonthsSinceActive() {
