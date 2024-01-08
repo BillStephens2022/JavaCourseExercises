@@ -1,8 +1,10 @@
 package StreamingStudents;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -75,11 +77,20 @@ public class Main {
                 .count();
         System.out.println("longTerm students? " + longTermCount);
 
-        Arrays.stream(students)
+        var longTimeLearners = Arrays.stream(students)
                 .filter(s -> (s.getAge() - s.getAgeEnrolled() >= 7) &&
                         (s.getMonthsSinceActive() < 12))
                 .filter(s -> !s.hasProgrammingExperience())
                 .limit(5)
-                .forEach(System.out::println);
+                .toArray(Student[]::new);
+
+        var learners = Arrays.stream(students)
+                .filter(s -> (s.getAge() - s.getAgeEnrolled() >= 7) &&
+                        (s.getMonthsSinceActive() < 12))
+                .filter(s -> !s.hasProgrammingExperience())
+                .limit(5)
+                .collect(Collectors.toList());
+
+        Collections.shuffle(learners);
     }
 }
