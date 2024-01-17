@@ -10,7 +10,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class BuildStudentData {
-    public static void build(String datFileName) {
+    public static void build(String datFileName, boolean separateIndex) {
         Path studentJSON = Path.of("students-backup.json");
         String dataFile = datFileName + ".dat";
         Map<Long, Long> indexedIds = new LinkedHashMap<>();
@@ -23,7 +23,7 @@ public class BuildStudentData {
             var records = data.split(System.lineSeparator());
             System.out.println("# of records = " + records.length);
 
-            long startingPos = 4 + (16L * records.length);
+            long startingPos = separateIndex ? 0 : 4 + (16L * records.length);
 
             Pattern idPattern = Pattern.compile("studentId\":([0-9]+)");
             try (RandomAccessFile ra = new RandomAccessFile(dataFile, "rw")) {
@@ -36,7 +36,9 @@ public class BuildStudentData {
                         ra.writeUTF(record);
                     }
                 }
-                writeIndex(ra, indexedIds);
+                writeIndex((separateIndex) ? new RandomAccessFile(
+                        datFileName + ".idx", "rw") :
+                        ra, indexedIds);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

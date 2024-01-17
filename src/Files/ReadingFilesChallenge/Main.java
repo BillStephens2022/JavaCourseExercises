@@ -1,4 +1,4 @@
-package ReadingFilesChallenge;
+package Files.ReadingFilesChallenge;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
