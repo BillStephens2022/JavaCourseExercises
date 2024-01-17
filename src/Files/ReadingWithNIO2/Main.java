@@ -1,4 +1,4 @@
-package ReadingWithNIO2;
+package Files.ReadingWithNIO2;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

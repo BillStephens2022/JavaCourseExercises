@@ -1,4 +1,4 @@
-package FileTreeWalkingChallenge;
+package Files.FileTreeWalkingChallenge;
 
 import java.io.IOException;
 import java.nio.file.Files;

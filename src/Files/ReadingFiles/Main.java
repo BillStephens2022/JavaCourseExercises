@@ -1,4 +1,4 @@
-package ReadingFiles;
+package Files.ReadingFiles;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
