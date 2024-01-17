@@ -1,0 +1,11 @@
+Directory Contents: 
+C:\Users\two4o\Desktop\JavaDevelopment\JavaCourseExercises\public
+C:\Users\two4o\Desktop\JavaDevelopment\JavaCourseExercises\public\assets
+C:\Users\two4o\Desktop\JavaDevelopment\JavaCourseExercises\public\assets\icons
+C:\Users\two4o\Desktop\JavaDevelopment\JavaCourseExercises\public\assets\icons\index.txt
+C:\Users\two4o\Desktop\JavaDevelopment\JavaCourseExercises\public\assets\icons\indexCopy.txt
+C:\Users\two4o\Desktop\JavaDevelopment\JavaCourseExercises\public\assets\index.txt
+C:\Users\two4o\Desktop\JavaDevelopment\JavaCourseExercises\public\assets\indexCopy.txt
+C:\Users\two4o\Desktop\JavaDevelopment\JavaCourseExercises\public\index.txt
+C:\Users\two4o\Desktop\JavaDevelopment\JavaCourseExercises\public\indexCopy.txt
+Generated: 2024-01-17T08:12:45.823595300
