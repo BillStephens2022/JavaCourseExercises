@@ -1,4 +1,4 @@
-package Threads;
+package Concurrency.Threads;
 
 public class CustomThread extends Thread {
     @Override
